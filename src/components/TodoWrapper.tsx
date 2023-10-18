@@ -56,10 +56,14 @@ function TodoWrapper({ todos, completeTodo, removeTodo, updateTodo }: Props) {
       <div
         className={todo.isComplete ? "todo-row complete" : "todo-row"}
         key={index}
-        style={{ cursor: "pointer" }}
-        onClick={() => completeTodo(todo.id)}
       >
-        <div key={todo.id}>{todo.text}</div>
+        <div
+          key={todo.id}
+          style={{ cursor: "pointer" }}
+          onClick={() => completeTodo(todo.id)}
+        >
+          {todo.text}
+        </div>
         <div className="icons">
           <RiCloseCircleLine
             onClick={() => removeTodo(todo.id)}
